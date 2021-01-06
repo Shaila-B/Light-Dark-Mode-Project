@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<!-- Bootstrap Essentials Starts -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+<!-- Bootstrap Essentials Ends -->
+<!-- External Style Sheet -->
+<link id="defaultMode" rel="stylesheet" type="text/css" href="lightmode.css">
+
+<body>
+	<div class="jumbotron text-center my-5  mx-5">
+	  <h1 class="display-4">LIGHT MODE & DARK MODE SWITCH</h1>
+	  <div class="customButtons">
+	  	<h4 class="display-8">Enable Dark OR Light Mode</h4>
+	    <button class="btn btn-sm btn-light" onclick="changeStyle('lightmode.css')">Light Mode</button>
+		<button class="btn btn-sm btn-dark" onclick="changeStyle('darkmode.css')">Dark Mode</button>
+	  <div>
+</div>
+	
+</body>
+</html>
+
+<script type="text/javascript">
+
+	var setDefaultMode = localStorage.getItem('mode')
+	
+	if (setDefaultMode == null){
+		changeStyle('lightmode.css')
+	}
+	else{
+		changeStyle(setDefaultMode)
+	}
+
+	function changeStyle(customMode){
+		document.getElementById("defaultMode").href = customMode
+		localStorage.setItem('mode', customMode)
+	}
+</script>
